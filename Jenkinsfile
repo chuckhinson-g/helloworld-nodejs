@@ -30,6 +30,7 @@ pipeline {
       }
       steps {
          echo "TODO - build and push image"
+         nexusPolicyEvaluation advancedProperties: '', failBuildOnNetworkError: false, iqApplication: selectedApplication('chuck-cloudbees'), iqStage: 'build', jobCredentialsId: ''
       }
     }
   }
