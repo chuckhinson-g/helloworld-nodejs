@@ -21,6 +21,7 @@ pipeline {
           echo 'Hello World!'   
           sh 'node --version'
         }
+        nexusPolicyEvaluation advancedProperties: '', failBuildOnNetworkError: false, iqApplication: selectedApplication('chuck-cloudbees'), iqStage: 'build', jobCredentialsId: ''
       }
     }
     stage('Build and Push Image') {
@@ -30,7 +31,6 @@ pipeline {
       }
       steps {
          echo "TODO - build and push image"
-         nexusPolicyEvaluation advancedProperties: '', failBuildOnNetworkError: false, iqApplication: selectedApplication('chuck-cloudbees'), iqStage: 'build', jobCredentialsId: ''
       }
     }
   }
